@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq.Expressions;
 
 namespace project
 {
@@ -142,7 +141,13 @@ namespace project
 
             while (whileIterator < whileCount)
             {
-                if (whileIterator == 5) continue;
+                if (whileIterator == 5)
+                {
+                    whileIterator++;
+                    continue;
+                }
+
+                ;
                 Console.WriteLine("While iteration # {0}", whileIterator + 1);
                 whileIterator++;
             }
@@ -154,6 +159,11 @@ namespace project
             {
                 Console.WriteLine("Do iterator # {0}", doIterator + 1);
                 doIterator++;
+
+                if (doIterator >= 8)
+                {
+                    break;
+                }
             } while (doIterator < doCount);
         }
     }
