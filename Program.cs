@@ -10,7 +10,9 @@ namespace project
             // MathOperations();
             // ConditionalConstructions();
             // SwitchCaseOperator();
-            Loops();
+            // Loops();
+            // Arrays();
+            LoopForEach();
         }
 
         public static void DataTypes()
@@ -165,6 +167,66 @@ namespace project
                     break;
                 }
             } while (doIterator < doCount);
+        }
+
+        public static void Arrays()
+        {
+            byte[] numbers = new byte[3] { 1, 2, 3 };
+            for (byte i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine("element: " + numbers[i]);
+            }
+
+            short[] nums = new short[10];
+            Random random = new Random();
+
+            short sum = 0;
+            for (byte i = 0; i < nums.Length; i++)
+            {
+                nums[i] = Convert.ToInt16(random.Next(-5, 60));
+                Console.WriteLine("Nums el: " + nums[i]);
+                sum += nums[i];
+            }
+
+            Console.WriteLine("Summary: the sum is {0} ", sum);
+
+            char[,] symbols = new char[2, 3]
+            {
+                { 'a', 'b', 'c' },
+                { 'd', 'e', 'f' }
+            };
+        }
+
+        public static void LoopForEach()
+        {
+            short[] nums = { 6, 5, 4, 5, 6, 8, 5, 2, 5, 6 };
+
+            foreach (var el in nums)
+            {
+                Console.WriteLine("Current element is {0}", el);
+            }
+
+            short[,] newNums =
+            {
+                { 6, 5, 8 },
+                { 9, 16, 54 }
+            };
+
+            foreach (var el in newNums)
+            {
+                Console.WriteLine("Current element in newNums is {0}", el);
+            }
+
+            // Collections (Generics)
+
+            List<short> collection = new List<short>();
+            collection.Add(54);
+            collection.Add(8558);
+            collection.Add(5448);
+            collection.Sort((s, s1) => s < s1 ? 1 : -1);
+            collection.ForEach(el => { Console.WriteLine(el); });
+            collection.Sort();
+            collection.Reverse();
         }
     }
 }
