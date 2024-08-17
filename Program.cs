@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace project
 {
@@ -12,7 +13,8 @@ namespace project
             // SwitchCaseOperator();
             // Loops();
             // Arrays();
-            LoopForEach();
+            // LoopForEach();
+            FilesAndStrings();
         }
 
         public static void DataTypes()
@@ -214,7 +216,7 @@ namespace project
 
             foreach (var el in newNums)
             {
-                Console.WriteLine("Current element in newNums is {0}", el);
+                Console.WriteLine($"Current element in newNums is {el}");
             }
 
             // Collections (Generics)
@@ -227,6 +229,46 @@ namespace project
             collection.ForEach(el => { Console.WriteLine(el); });
             collection.Sort();
             collection.Reverse();
+        }
+
+        public static void FilesAndStrings()
+        {
+            string word = "Hello";
+            string word2 = "Not Hello";
+            word += "!!!";
+            word2 = string.Concat(word2, "+++");
+            Console.WriteLine(word);
+            Console.WriteLine(word2);
+            Console.WriteLine(string.Compare(word2, word));
+            List<string> names = "alex,john,bob".Split(',').ToList();
+            names.ForEach(name => { 
+                Console.WriteLine(name);
+            });
+            string combinedNames = String.Join(" | ", names);
+            Console.WriteLine(combinedNames);
+
+            
+            Console.WriteLine("Enter text");
+            string text = Console.ReadLine();
+            using (FileStream someFile = new FileStream("info.txt", FileMode.OpenOrCreate))
+            {
+                byte[] arr = System.Text.Encoding.Default.GetBytes(text);
+                someFile.Write(arr);
+            }
+
+            using (FileStream stream = File.OpenRead("info.txt"))
+            {
+                byte[] arr = new byte[stream.Length];
+                stream.Read(arr);
+                Console.WriteLine("byte-by-byte structure:");
+                foreach (var b in arr)
+                {
+                    Console.Write(b);
+                }
+                Console.WriteLine("");
+                string textFromFile = System.Text.Encoding.Default.GetString(arr);
+                Console.WriteLine($"Text from file: {textFromFile}");
+            }
         }
     }
 }
