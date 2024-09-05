@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace project
+namespace ConsoleApp1
 {
     class Program
     {
@@ -14,7 +14,8 @@ namespace project
             // Loops();
             // Arrays();
             // LoopForEach();
-            FilesAndStrings();
+            // FilesAndStrings();
+            HandleException();
         }
 
         public static void DataTypes()
@@ -269,6 +270,45 @@ namespace project
                 string textFromFile = System.Text.Encoding.Default.GetString(arr);
                 Console.WriteLine($"Text from file: {textFromFile}");
             }
+        }
+
+        public static void HandleException()
+        {
+            /*try
+            {
+                int num = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(num);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e);
+            }*/
+
+            var isRunning = true;
+            while (isRunning)
+            {
+                try
+                {
+                    Console.Write("Enter number: ");
+                    var num = Convert.ToInt32(Console.ReadLine());
+                    var result = 100 / num;
+                    Console.WriteLine($"The result is: {result}");
+                    isRunning = false;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please enter valid number");
+                }
+                catch (DivideByZeroException)
+                {
+                    Console.WriteLine("Number should not be 0");
+                }
+                finally
+                {
+                    Console.WriteLine("Execution iteration ended");
+                }
+            }
+
         }
     }
 }
