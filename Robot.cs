@@ -10,15 +10,9 @@ public class Robot
     {
         Console.WriteLine("Creating new Robot");
         SetProps(name, weight, coordinates);
+        LogProps();
     }
-
-    private void SetProps(string name, short weight, byte[] coordinates)
-    {
-        Name = name;
-        Weight = weight;
-        Coordinates = coordinates;
-    }
-
+    
     public void LogProps()
     {
         Console.WriteLine($"Robot name => {Name}");
@@ -28,5 +22,14 @@ public class Robot
         {
             Console.Write($" {coordinate}");
         }
+        Console.WriteLine("");
+        Console.WriteLine("=====*******=====");
+    }
+
+    private void SetProps(string Name, short Weight, byte[] Coordinates)
+    {
+        this.Name = Name;
+        this.Weight = Weight;
+        this.Coordinates = Coordinates;
     }
 }
