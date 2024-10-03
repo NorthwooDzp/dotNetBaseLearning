@@ -321,5 +321,22 @@ class Program
         Killer assasin = new Killer("Robocop", 64, new byte[] {40,20,16}, 55);
         // assasin.LogProps();
         assasin.Laser();
+
+        Robot[] robots = new Robot[] { ammy, assasin };
+
+        List<Robot> robotsList = new List<Robot>();
+        robotsList.Add(ammy);
+        robotsList.Add(assasin);
+        robotsList.Add(new Killer());
+        
+        Console.WriteLine("<===========*****=============>");
+
+        foreach (var robot in robotsList)
+        {
+            robot.LogProps();
+            
+            Console.WriteLine("Is Killer => " + (robot is Killer));
+            Console.WriteLine("Is Robot => " + (robot is Robot));
+        }
     }
 }
