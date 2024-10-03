@@ -8,6 +8,8 @@ public class Robot
 
     private byte[] coordinates;
 
+    private static int count = 0;
+
     public short Weight
     {
         get
@@ -20,9 +22,18 @@ public class Robot
     
     public int Width { get ; private set; }
 
+    public Robot()
+    {
+        count++;
+        name = $"Simple bot #{count}";
+        weight = 16;
+        coordinates = new byte[] { 0, 0, 0 };
+    }
+
     public Robot(string name, short weight, byte[] coordinates)
     {
         Console.WriteLine("Creating new Robot");
+        count++;
         SetProps(name, weight, coordinates);
     }
 
@@ -47,3 +58,4 @@ public class Robot
         this.coordinates = coordinates;
     }
 }
+

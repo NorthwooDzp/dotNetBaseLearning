@@ -317,5 +317,9 @@ class Program
         ammy.Weight = 24;
         Console.WriteLine(ammy.Weight);
         Console.WriteLine(ammy.Width);
+
+        Killer assasin = new Killer("Robocop", 64, new byte[] {40,20,16}, 55);
+        // assasin.LogProps();
+        assasin.Laser();
     }
 }
