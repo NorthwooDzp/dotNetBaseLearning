@@ -314,5 +314,8 @@ class Program
     {
         Robot ammy = new Robot("AIMEe", 12, new byte[]{50, 0, 24});
         ammy.LogProps();
+        ammy.Weight = 24;
+        Console.WriteLine(ammy.Weight);
+        Console.WriteLine(ammy.Width);
     }
 }
