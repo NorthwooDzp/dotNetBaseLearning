@@ -8,7 +8,7 @@ public class Killer : Robot
     {
     }
 
-    public Killer(string name, short weight, byte[] coordinates, int damage) : base(name, weight, coordinates)
+    public Killer(string name, short weight, byte[] coordinates, int damage) : base(name, weight, coordinates, TypeRobot.ENEMY)
     {
         Damage = damage;
     }

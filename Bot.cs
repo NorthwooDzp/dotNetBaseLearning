@@ -8,7 +8,7 @@ public class Bot : Robot, IRunning
     {
     }
 
-    public Bot(string name, short weight, byte[] coordinates) : base(name, weight, coordinates)
+    public Bot(string name, short weight, byte[] coordinates) : base(name, weight, coordinates, TypeRobot.BOT)
     {
     }
     

@@ -10,6 +10,8 @@ public abstract class Robot
 
     private static int count = 0;
 
+    protected TypeRobot type;
+
     public short Weight
     {
         get
@@ -30,11 +32,11 @@ public abstract class Robot
         coordinates = new byte[] { 0, 0, 0 };
     }
 
-    public Robot(string name, short weight, byte[] coordinates)
+    public Robot(string name, short weight, byte[] coordinates, TypeRobot type)
     {
         Console.WriteLine("Creating new Robot");
         count++;
-        SetProps(name, weight, coordinates);
+        SetProps(name, weight, coordinates, type);
     }
 
     public virtual void LogProps()
@@ -50,11 +52,12 @@ public abstract class Robot
         Console.WriteLine("");
     }
 
-    private void SetProps(string name, short weight, byte[] coordinates)
+    private void SetProps(string name, short weight, byte[] coordinates, TypeRobot type)
     {
         this.name = name;
         this.weight = weight;
         this.coordinates = coordinates;
+        this.type = type;
     }
 
     public abstract void Move(float speed);
