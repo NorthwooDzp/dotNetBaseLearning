@@ -23,4 +23,12 @@ public class Killer : Robot
         base.LogProps();
         Console.WriteLine($"Damage => {Damage}");
     }
+
+    public override void Move(float speed)
+    {
+        foreach (var coordinate in coordinates)
+        {
+            Console.WriteLine(coordinate + 2 * speed);
+        }
+    }
 }

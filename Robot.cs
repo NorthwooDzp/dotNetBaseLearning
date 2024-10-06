@@ -1,12 +1,12 @@
 ﻿namespace ConsoleApp1;
 
-public class Robot
+public abstract class Robot
 {
     private string name;
 
     private short weight;
 
-    private byte[] coordinates;
+    protected byte[] coordinates;
 
     private static int count = 0;
 
@@ -56,5 +56,7 @@ public class Robot
         this.weight = weight;
         this.coordinates = coordinates;
     }
+
+    public abstract void Move(float speed);
 }
 
