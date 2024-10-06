@@ -8,14 +8,19 @@ public class Killer : Robot
     {
     }
 
-    public Killer(string name, short weight, byte[] coordinates, int damage): base(name, weight, coordinates)
+    public Killer(string name, short weight, byte[] coordinates, int damage) : base(name, weight, coordinates)
     {
         Damage = damage;
-        base.LogProps();
     }
 
     public void Laser()
     {
         Console.WriteLine("Shot ====>..........*****");
+    }
+
+    public override void LogProps()
+    {
+        base.LogProps();
+        Console.WriteLine($"Damage => {Damage}");
     }
 }

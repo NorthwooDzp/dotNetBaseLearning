@@ -313,7 +313,7 @@ class Program
     public static void OOP()
     {
         Robot ammy = new Robot("AIMEe", 12, new byte[]{50, 0, 24});
-        ammy.LogProps();
+        // ammy.LogProps();
         ammy.Weight = 24;
         Console.WriteLine(ammy.Weight);
         Console.WriteLine(ammy.Width);
@@ -328,8 +328,6 @@ class Program
         robotsList.Add(ammy);
         robotsList.Add(assasin);
         robotsList.Add(new Killer());
-        
-        Console.WriteLine("<===========*****=============>");
 
         foreach (var robot in robotsList)
         {
@@ -337,6 +335,7 @@ class Program
             
             Console.WriteLine("Is Killer => " + (robot is Killer));
             Console.WriteLine("Is Robot => " + (robot is Robot));
+            Console.WriteLine("<--===|***|===-->");
         }
     }
 }

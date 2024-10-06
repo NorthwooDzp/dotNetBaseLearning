@@ -37,7 +37,7 @@ public class Robot
         SetProps(name, weight, coordinates);
     }
 
-    public void LogProps()
+    public virtual void LogProps()
     {
         Console.WriteLine($"Robot name => {name}");
         Console.WriteLine($"Robot weight => {weight} kg");
@@ -48,7 +48,6 @@ public class Robot
         }
 
         Console.WriteLine("");
-        Console.WriteLine("=====*******=====");
     }
 
     private void SetProps(string name, short weight, byte[] coordinates)
