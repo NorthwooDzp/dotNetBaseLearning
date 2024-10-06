@@ -1,7 +1,9 @@
 ﻿namespace ConsoleApp1;
 
-public class Bot : Robot
+public class Bot : Robot, IRunning
 {
+    public float SpeedRun { get; set; }
+    
     public Bot()
     {
     }
@@ -16,5 +18,10 @@ public class Bot : Robot
         {
             Console.WriteLine(coordinate + 6 * speed);
         }
+    }
+
+    public void Run()
+    {
+        Console.WriteLine($"Running with speed {SpeedRun}");
     }
 }
